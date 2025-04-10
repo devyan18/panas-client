@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/src/assets/fonts/montserrat/Montserrat-Regular.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/src/assets/fonts/montserrat/Montserrat-Bold.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/src/assets/fonts/montserrat/Montserrat-Black.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/src/assets/fonts/montserrat/Montserrat-Light.ttf')
+    format('truetype');
+}
+
+@import 'tailwindcss';
+
+@theme {
+  --font-montserrat: 'montserrat', sans-serif;
+}
