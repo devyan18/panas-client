@@ -1,13 +1,15 @@
-import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import { createRoot } from 'react-dom/client'
 import SessionProvider from './providers/SessionProvider.tsx'
-import Layout from './components/Layout.tsx'
+import Router from './Router.tsx'
+// import './katex.min.css'
+import 'katex/dist/katex.min.css'
+import { ThemeProvider } from './providers/DarkMode.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <SessionProvider>
-    <Layout>
-      <App />
-    </Layout>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Router />
+    </ThemeProvider>
   </SessionProvider>,
 )

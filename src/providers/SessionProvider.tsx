@@ -3,8 +3,8 @@ import { useEffect, useState, createContext, useContext } from 'react'
 import { supabase } from '../supabaseClient'
 
 type SessionContextType = {
-  session: Session | null
-  user: User | null
+  session: Session | null | undefined
+  user: User | null | undefined
   isLoading: boolean
 }
 
@@ -19,8 +19,8 @@ type Props = {
 }
 
 export default function SessionProvider({ children }: Props) {
-  const [session, setSession] = useState<Session | null>(null)
-  const [user, setUser] = useState<any>(null)
+  const [session, setSession] = useState<Session | null | undefined>(undefined)
+  const [user, setUser] = useState<any>(undefined)
   const [isLoading, setLoading] = useState<boolean>(false)
 
   const fetchSession = async () => {
@@ -60,6 +60,10 @@ export default function SessionProvider({ children }: Props) {
 
     return () => subscription.unsubscribe()
   }, [])
+
+  useEffect(() => {
+    console.log({ session, user })
+  }, [session, user])
 
   return (
     <SessionContext.Provider value={{ session, user, isLoading }}>

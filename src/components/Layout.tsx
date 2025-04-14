@@ -1,10 +1,13 @@
+import Sidebar from './Sidebar'
+
 type Props = {
   children: React.ReactNode
 }
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
+    <div className="grid grid-cols-12 min-h-svh">
+      <Sidebar />
       {children}
     </div>
   )
